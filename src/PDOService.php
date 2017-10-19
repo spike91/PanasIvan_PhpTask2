@@ -48,19 +48,21 @@ class PDOService implements IServiceDB
 
 	
 	public function getCourseByID($id)
-	{	
-		$course=null;
+	{
+        $course=null;
 		if ($this->connect()) {
-			if ($result = $this->connectDB->prepare('SELECT * FROM courses.tcourse WHERE id=:id')) {
-				$result->execute(array('id'=>$id));
+			if ($result = $this->connectDB->prepare('SELECT * FROM courses.tcourse WHERE course_id=:id')) {
+				//$result->execute(array('id'=>$id));
 				//$result->execute(['id'=>$id]);
-                // $result->bindValue(':id', $id, PDO::PARAM_INT);
-                // $result->execute();
-				
+
+                 $result->bindValue(':id', $id, PDO::PARAM_INT);
+                 $result->execute();
+
 				$numRows = $result->rowCount();
 				if ($numRows==1) {
 					$row=$result->fetch();
-					$course=new Film($row[0], $row[1], $row[3], $row[2]);
+					$course=new Course($row['course_id'], $row['course_code'], $row['course_name'],
+                        $row['course_description']);
 				}
 			}
 		}
@@ -96,7 +98,7 @@ class PDOService implements IServiceDB
 
 	public function getCourseInfoById($id)
 	{
-		$course;
+		$course=null;
 		if ($this->connect()) {
 			if ($result = $this->connectDB->prepare('SELECT * FROM courses.get_courses_info WHERE course_id=:id LIMIT 1')) {
 				$result->execute(array('id'=>$id));
@@ -105,7 +107,7 @@ class PDOService implements IServiceDB
 					$students=array();
 					foreach (explode(";",$row['students']) as $item) {
 					   $student=explode(",",$item);
-					   $students[]=new Student($student[0], $student[1],$student[2],$student[3],$student[4]);
+					   $students[]=new Student($student[0], $student[2],$student[3],$student[1],$student[5]);
 					}
 					$languages=array();
 					foreach (explode(";",$row['languages']) as $item) {
