@@ -1,6 +1,20 @@
 <?php
 require_once "autoloader.php";
 ?>
+<!--
+Author: Ivan Panas RDIR51
+Task description:
+    "Kolledzi tudengite registreerimine kursustele (PHP)
+Loo veebirakendus, mis sisaldab informatsiooni kursuste ja registreeritud tudengitekohta
+
+Pealehel ilmub kursuste nimekiri (kursuse nimetus ja kood)
+Kasutaja võib valida kursuse ja vaadata teiselt lehelt kursuse täisinformatsiooni ja registreeritud tudengite nimesid.
+Realiseerimisel looge klassid, mis kirjeldavad süsteemi mudelit
+
+Hindamise ajal hinnatakse ka kasutajaliidest
+
+Kasutage Git"
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
