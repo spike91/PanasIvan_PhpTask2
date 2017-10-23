@@ -10,11 +10,8 @@ require_once "autoloader.php";
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     </head>
     <body style="">
-        <header class="py-5 bg-dark" style="margin-bottom: 40px;">
-            <div class="container-fluid">
-                <div class="row">
-                </div>
-            </div>
+        <header class="py-5 bg-dark" style="margin-bottom: 40px;height: 30px">
+                    <div class="h2 text-center" style="color: #dcdcdc;">All Courses </div>
         </header>
         <div class="container">
             <div class="row" >
@@ -55,6 +52,8 @@ require_once "autoloader.php";
             </div>
         </div>
 
-
+<footer class="py-4 bg-dark" style="bottom: 0;position: fixed;width: 100%">
+    <div class="h6 text-center" style="color: #dcdcdc;">Ivan Panas RDIR51</div>
+</footer>
     </body>
 </html>
