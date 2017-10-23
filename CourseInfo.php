@@ -24,7 +24,7 @@ require_once "autoloader.php";
             <thead class="thead-inverse">
             <tr>
                 <th>
-                    <div class="text-center">Course Info</div>
+                    <div class="h4 text-center"><?php echo $course->name ?> </div>
                 </th>
             </tr>
             </thead>
@@ -36,40 +36,10 @@ require_once "autoloader.php";
             <tbody>
             <tr>
                 <td>
-                    <div class="col-lg-3"> id</div>
+                    <div class="col-3">Code:</div>
                 </td>
                 <td>
-                    <div class="text-left col-lg-9"><?php echo $course->id ?></div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="row-fluid">
-        <table class="table table-striped table-hover">
-            <tbody>
-            <tr>
-                <td>
-                    <div class="col-lg-3">code</div>
-                </td>
-                <td>
-                    <div class="text-left col-lg-9"> <?php echo $course->code ?> </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="row-fluid">
-        <table class="table table-striped table-hover">
-            <tbody>
-            <tr>
-                <td>
-                    <div class="col-lg-3">name</div>
-                </td>
-                <td>
-                    <div class="text-left col-lg-9"> <?php echo $course->name ?> </div>
+                    <div class="text-left col-9"> <?php echo $course->code ?> </div>
                 </td>
             </tr>
             </tbody>
@@ -81,10 +51,10 @@ require_once "autoloader.php";
             <tbody>
             <tr>
                 <td style="width: 30%;">
-                    <div class="col-lg-3">description</div>
+                    <div class="col-3">Description:</div>
                 </td>
                 <td>
-                    <div class="text-center col-lg-9"> <?php echo $course->description ?> </div>
+                    <div class="text-center col-9"> <?php echo $course->description ?> </div>
                 </td>
             </tr>
             </tbody>
@@ -96,12 +66,11 @@ require_once "autoloader.php";
             <tbody>
             <tr>
                 <td style="width: 30%;">
-                    <div class="col-lg-3">students</div>
+                    <div class="col-3">Students:</div>
                 </td>
                 <td>
-                    <div class="text-center col-lg-9">
+                    <div class="text-center col-9">
 
-                        <!-- List group -->
                         <ul class="list-group">
                             <?php
                             foreach ($course->students as $student) {
@@ -119,8 +88,6 @@ require_once "autoloader.php";
     </div>
 </div>
 
-</div>
-</div>
 <footer class="py-4 bg-dark" style="bottom: 0;position: fixed;width: 100%;">
     <div class="h6 text-center" style="color: #dcdcdc;">Ivan Panas RDIR51</div>
 </footer>
